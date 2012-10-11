@@ -1,0 +1,17 @@
+{
+    "name": "Open in nbviewer",
+    "description": "Open the current page in nbviewer in a new tab.",
+    "version": "1.0",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "browser_action": {
+        "default_title": "Open the current page in nbviewer.",
+        "default_icon": "ipynb_icon_16x16.png"
+    },
+    "manifest_version": 2
+}
