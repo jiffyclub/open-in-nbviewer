@@ -10,15 +10,17 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     url_root = 'http://nbviewer.ipython.org/';
     url = null;
 
-    gist = tab.url.match(/^https?:\/\/gist.github.com\/([0-9]+)$/);
-    if (gist) {
+    if (tab.url.search(/^https?:\/\/gist\.github\.com\/[0-9]+$/) !== -1) {
+        gist = tab.url.match(/^https?:\/\/gist\.github\.com\/([0-9]+)$/);
         url = url_root + gist[1];
-    } else {
-        path = tab.url.match(/^https?:\/\/(.*\.ipynb)$/);
 
-        if (path) {
-            url = url_root + 'url/' + path[1];
-        }
+    } else if (tab.url.search(/^https:\/\/.*\.ipynb$/) !== -1) {
+        path = tab.url.match(/^https:\/\/(.*\.ipynb)$/);
+        url = url_root + 'urls/' + path[1];
+
+    } else if (tab.url.search(/^http:\/\/.*\.ipynb$/) !== -1) {
+        path = tab.url.match(/^http:\/\/(.*\.ipynb)$/);
+        url = url_root + 'url/' + path[1];
     }
 
     if (url) {
