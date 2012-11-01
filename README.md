@@ -20,3 +20,10 @@ Chrome
 Use the
 [Chrome extension](https://chrome.google.com/webstore/detail/open-in-nbviewer/ihlhlehlibooakiicbiakgojckpnlali?hl=en),
 which adds an nbviewer icon to Chrome's toolbar.
+
+Firefox
+-------
+
+Use the
+[Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/open-in-nbviewer/),
+which adds an nbviewer icon to Firefox's toolbar.
