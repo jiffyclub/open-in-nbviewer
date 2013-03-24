@@ -3,7 +3,7 @@
     "license": "MIT (https://raw.github.com/jiffyclub/open-in-nbviewer/master/LICENSE.txt)",
     "author": "Matt Davis (http://penandpants.com) <jiffyclub@gmail.com>",
     "url": "https://github.com/jiffyclub/open-in-nbviewer",
-    "version": "0.1",
+    "version": "0.2",
     "fullName": "Open in nbviewer",
     "id": "jid1-9BXbjNx3GBwh4A",
     "description": "An add-on that opens the current page in nbviewer when clicked.",

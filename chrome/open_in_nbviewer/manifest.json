@@ -1,7 +1,7 @@
 {
     "name": "Open in nbviewer",
     "description": "Open the current page in nbviewer in a new tab.",
-    "version": "1.1",
+    "version": "1.2",
     "background": {
         "scripts": ["background.js"],
         "persistent": false

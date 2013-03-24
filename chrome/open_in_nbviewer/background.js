@@ -7,11 +7,12 @@
 
 // Called when the user clicks on the browser action.
 chrome.browserAction.onClicked.addListener(function(tab) {
-    url_root = 'http://nbviewer.ipython.org/';
-    url = null;
+    var url_root = 'http://nbviewer.ipython.org/';
+    var url = null;
+    var path;
 
-    if (tab.url.search(/^https?:\/\/gist\.github\.com\/[0-9]+$/) !== -1) {
-        gist = tab.url.match(/^https?:\/\/gist\.github\.com\/([0-9]+)$/);
+    if (tab.url.search(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?[0-9]+$/) !== -1) {
+        gist = tab.url.match(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?([0-9]+)$/);
         url = url_root + gist[1];
 
     } else if (tab.url.search(/^https:\/\/.*\.ipynb$/) !== -1) {

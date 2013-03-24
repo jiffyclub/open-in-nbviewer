@@ -1,9 +1,15 @@
 var openInNb = require("open_in_nbviewer");
 
-exports["test gist"] = function(assert) {
-    var gistURL = "https://gist.github.com/3778422";
-    var nbURL = "http://nbviewer.ipython.org/3778422/";
-    assert.ok(openInNb.nbviewerURL(gistURL) === nbURL, "gist URL works");
+exports["test gist1"] = function(assert) {
+    var gistURL = "https://gist.github.com/5165431";
+    var nbURL = "http://nbviewer.ipython.org/5165431/";
+    assert.ok(openInNb.nbviewerURL(gistURL) === nbURL, "gist1 URL works");
+};
+
+exports["test gist2"] = function(assert) {
+    var gistURL = "https://gist.github.com/jiffyclub/5165431";
+    var nbURL = "http://nbviewer.ipython.org/5165431/";
+    assert.ok(openInNb.nbviewerURL(gistURL) === nbURL, "gist2 URL works");
 };
 
 exports["test http"] = function(assert) {
