@@ -2,14 +2,25 @@ var openInNb = require("open_in_nbviewer");
 
 exports["test gist1"] = function(assert) {
     var gistURL = "https://gist.github.com/5165431";
-    var nbURL = "http://nbviewer.ipython.org/5165431/";
+    var nbURL = "http://nbviewer.ipython.org/5165431";
     assert.ok(openInNb.nbviewerURL(gistURL) === nbURL, "gist1 URL works");
 };
 
 exports["test gist2"] = function(assert) {
     var gistURL = "https://gist.github.com/jiffyclub/5165431";
-    var nbURL = "http://nbviewer.ipython.org/5165431/";
+    var nbURL = "http://nbviewer.ipython.org/5165431";
     assert.ok(openInNb.nbviewerURL(gistURL) === nbURL, "gist2 URL works");
+};
+
+exports["test gist3"] = function(assert) {
+    var gistURL = "https://gist.github.com/jiffyclub/5a1b6c5d4e3f1";
+    var nbURL = "http://nbviewer.ipython.org/5a1b6c5d4e3f1";
+    assert.ok(openInNb.nbviewerURL(gistURL) === nbURL, "gist3 URL works");
+};
+
+exports["test gist4"] = function(assert) {
+    var gistURL = "https://gist.github.com/jiffyclub/5a1b6c5d4e3f1g";
+    assert.ok(openInNb.nbviewerURL(gistURL) === null, "gist4 URL works");
 };
 
 exports["test http"] = function(assert) {

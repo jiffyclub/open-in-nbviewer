@@ -3,8 +3,8 @@ function nbviewerURL(currentURL) {
     var url = null;
     var path;
 
-    if (currentURL.search(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?[0-9]+$/) !== -1) {
-        var gist = currentURL.match(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?([0-9]+)$/);
+    if (currentURL.search(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?[a-f0-9]+$/) !== -1) {
+        var gist = currentURL.match(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?([a-f0-9]+)$/);
         url = url_root + gist[1];
 
     } else if (currentURL.search(/^https:\/\/.*\.ipynb$/) !== -1) {
