@@ -1,3 +1,4 @@
+
 javascript:date=new Date();
 url_root='http://nbviewer.ipython.org/';
 url=null;
