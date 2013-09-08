@@ -9,18 +9,24 @@
 chrome.browserAction.onClicked.addListener(function(tab) {
     var url_root = 'http://nbviewer.ipython.org/';
     var url = null;
+    var gist_re = /^https?:\/\/gist\.github\.com\/(?:\w+\/)?([a-f0-9]+)$/;
+    var github_re = /^https:\/\/(github\.com\/.*\/)blob\/(.*\.ipynb)$/;
+    var https_re = /^https:\/\/(.*\.ipynb)$/;
+    var http_re = /^http:\/\/(.*\.ipynb)$/;
+    var loc = tab.url;
     var path;
 
-    if (tab.url.search(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?[a-f0-9]+$/) !== -1) {
-        gist = tab.url.match(/^https?:\/\/gist\.github\.com\/(?:\w+\/)?([a-f0-9]+)$/);
+    if (gist_re.test(loc)) {
+        gist = gist_re.exec(loc);
         url = url_root + gist[1];
-
-    } else if (tab.url.search(/^https:\/\/.*\.ipynb$/) !== -1) {
-        path = tab.url.match(/^https:\/\/(.*\.ipynb)$/);
+    } else if (github_re.test(loc)) {
+        path = github_re.exec(loc);
+        url = url_root + 'urls/raw.' + path[1] + path[2];
+    } else if (https_re.test(loc)) {
+        path = https_re.exec(loc);
         url = url_root + 'urls/' + path[1];
-
-    } else if (tab.url.search(/^http:\/\/.*\.ipynb$/) !== -1) {
-        path = tab.url.match(/^http:\/\/(.*\.ipynb)$/);
+    } else if (http_re.test(loc)) {
+        path = http_re.exec(loc);
         url = url_root + 'url/' + path[1];
     }
 
