@@ -27,3 +27,9 @@ Firefox
 Use the
 [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/open-in-nbviewer/),
 which adds an nbviewer icon to Firefox's toolbar.
+
+Safari
+------
+
+Download and install the
+[Safari extension](https://github.com/jiffyclub/open-in-nbviewer/raw/master/safari/open-in-nbviewer.safariextz).
