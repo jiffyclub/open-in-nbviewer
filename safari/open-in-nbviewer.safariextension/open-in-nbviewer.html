@@ -1,0 +1,43 @@
+<script>
+function open_in_nbviewer(event) {
+    if (event.command === "open_in_nbviewer") {
+        var url_root = 'http://nbviewer.ipython.org/';
+        var url = null;
+        var gist_re = /^https?:\/\/gist\.github\.com\/(?:\w+\/)?([a-f0-9]+)$/;
+        var github_re = /^https:\/\/(github\.com\/.*\/)blob\/(.*\.ipynb)$/;
+        var https_re = /^https:\/\/(.*\.ipynb)$/;
+        var http_re = /^http:\/\/(.*\.ipynb)$/;
+        var loc = event.target.browserWindow.activeTab.url;
+        var path;
+
+        if (gist_re.test(loc)) {
+            gist = gist_re.exec(loc);
+            url = url_root + gist[1];
+        } else if (github_re.test(loc)) {
+            path = github_re.exec(loc);
+            url = url_root + 'urls/raw.' + path[1] + path[2];
+        } else if (https_re.test(loc)) {
+            path = https_re.exec(loc);
+            url = url_root + 'urls/' + path[1];
+        } else if (http_re.test(loc)) {
+            path = http_re.exec(loc);
+            url = url_root + 'url/' + path[1];
+        }
+
+        if (url) {
+            var new_tab = event.target.browserWindow.openTab();
+            new_tab.url = url;
+        }
+    }
+}
+
+function validateCommand(event) {
+    if (event.command === "open_in_nbviewer") {
+        // Disable the button if there is no URL loaded in the tab.
+        event.target.disabled = !event.target.browserWindow.activeTab.url;
+    }
+}
+
+safari.application.addEventListener("command", open_in_nbviewer, false);
+safari.application.addEventListener("validate", validateCommand, false);
+</script>
