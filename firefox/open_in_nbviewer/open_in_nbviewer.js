@@ -5,7 +5,7 @@ function nbviewerURL(currentURL) {
     var github_re = /^https:\/\/(github\.com\/.*\/)blob\/(.*\.ipynb)$/;
     var https_re = /^https:\/\/(.*\.ipynb)$/;
     var http_re = /^http:\/\/(.*\.ipynb)$/;
-    var path;
+    var gist, path;
 
     if (gist_re.test(currentURL)) {
         gist = gist_re.exec(currentURL);

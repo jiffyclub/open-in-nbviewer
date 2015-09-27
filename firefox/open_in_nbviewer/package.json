@@ -2,11 +2,14 @@
     "name": "open_in_nbviewer",
     "license": "MIT (https://raw.github.com/jiffyclub/open-in-nbviewer/master/LICENSE.txt)",
     "author": "Matt Davis (http://penandpants.com) <jiffyclub@gmail.com>",
-    "url": "https://github.com/jiffyclub/open-in-nbviewer",
-    "version": "0.4",
-    "fullName": "Open in nbviewer",
-    "id": "jid1-9BXbjNx3GBwh4A",
-    "description": "An add-on that opens the current page in nbviewer when clicked.",
-    "icon": "data/ipynb_icon_32x32.png",
-    "icon64": "data/ipynb_icon_64x64.png"
+    "url": "http://jiffyclub.github.io/open-in-nbviewer/",
+    "version": "0.5.0",
+    "fullName": "Open in Nbviewer",
+    "id": "jid1-9BXbjNx3GBwh4A@jetpack",
+    "description": "An add-on that opens the current page in nbviewer.",
+    "main": "index.js",
+    "engines": {
+        "firefox": ">=38.0a1",
+        "fennec": ">=38.0a1"
+    }
 }
