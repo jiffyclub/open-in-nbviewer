@@ -1,0 +1,4 @@
+When a user is on a page that can be rendered by http://nbviewer.ipython.org/ clicking this add-on will open a new tab straight to the rendered version on http://nbviewer.ipython.org/. On unsupported pages it should do nothing. Here are a couple of example pages where it should work:
+
+https://gist.github.com/jiffyclub/d132d32dc2d05506b89b
+https://github.com/jiffyclub/ipythonblocks/blob/master/demos/ipythonblocks_org_demo.ipynb
