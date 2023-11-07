@@ -1,5 +1,5 @@
 javascript:date = new Date();
-url_root = 'http://nbviewer.ipython.org/';
+url_root = 'http://nbviewer.org/';
 url = null;
 gist_re = /^https?:\/\/gist\.github\.com\/(?:\w+\/)?([a-f0-9]+)$/;
 github_re = /^https:\/\/(github\.com\/.*\/)blob\/(.*\.ipynb)$/;
